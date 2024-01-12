@@ -1,4 +1,4 @@
-#cel mai nou/ bun cod: culori sarpe + top 3 score+ restart
+
 # imports of different modules
 import pygame
 import sys
