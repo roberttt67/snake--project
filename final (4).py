@@ -1,4 +1,3 @@
-
 # imports of different modules
 import pygame
 import sys
