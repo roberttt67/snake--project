@@ -1,15 +1,15 @@
-# imports of different modules
+
 import pygame
 import sys
 import random
 import time
 
 pygame.init()
-# Play Surface
+
 window_width = 720
 window_length = 460
-playSurface = pygame.display.set_mode((window_width, window_length)) # To set the console window where game will run, the set_mode expects a tupple having dimensions of the console
-pygame.display.set_caption('!!! SNAKE GAME !!!') # To set the Upper heading of the game console window
+playSurface = pygame.display.set_mode((window_width, window_length)) 
+pygame.display.set_caption('!!! SNAKE GAME !!!') 
 
 
 #Colors
@@ -38,7 +38,7 @@ score = 0
 snake_speed = 10
 initscore = 0
 
-# Variabile pentru buton
+# variables for our button
 button_rect = pygame.Rect(300, 400, 120, 50)
 button_color = (0, 0, 255)
 button_text = "RESTART"
@@ -46,27 +46,23 @@ button_font = pygame.font.SysFont('monaco', 24)
 button_text_surface = button_font.render(button_text, True, white)
 button_text_rect = button_text_surface.get_rect(center=button_rect.center)
 
-# Funcție pentru desenarea butonului
+# drawing the "restart" button
 def draw_button():
     pygame.draw.rect(playSurface, button_color, button_rect)
     playSurface.blit(button_text_surface, button_text_rect)
 
 # Game Over function
 def gameOver():
-    myFont = pygame.font.SysFont('monaco', 72) #choose font name and size
-    GOsurf = myFont.render(' GAME OVER !!!', True, red) # this is the surface where game over will display having 3 args : the message, antialiasing,and Color
-    GOrect = GOsurf.get_rect() #to get rect coordinates of the game over text surface
+    myFont = pygame.font.SysFont('monaco', 72) 
+    GOsurf = myFont.render(' GAME OVER !!!', True, red) 
+    GOrect = GOsurf.get_rect() 
     GOrect.midtop = (350, 15)
-    playSurface.blit(GOsurf, GOrect) # bind the gameover text to the main surface
+    playSurface.blit(GOsurf, GOrect) 
     showScore(0)
     pygame.display.flip() # to set the fps
-        
-    #time.sleep(2)
-    #pygame.quit() # exit game window
-    #sys.exit() # exit cmd console
-
+           
 ocean_color=pygame.Color('mediumaquamarine') 
-
+ #for the backround
 def draw_ocean(): 
    for row in range(40) :
        if row %2==0:
