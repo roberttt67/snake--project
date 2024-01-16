@@ -156,7 +156,6 @@ while True:
     else:
         snakeBody.pop()
     
-    #Food spawn
     if foodSpawn == False:
         foodPos = [random.randrange(1,72)*10,random.randrange(1,46)*10]
     foodSpawn = True
